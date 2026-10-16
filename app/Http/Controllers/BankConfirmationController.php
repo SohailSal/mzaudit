@@ -255,6 +255,7 @@ class BankConfirmationController extends Controller
             $templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor('templatebr.docx');
             $names = str_replace(["&"], "&amp;", $year->company->name);
             $templateProcessor->setValue('client', $names);
+            $templateProcessor->setValue('company_no', $year->company->company_no);
             $templateProcessor->setValue('end', $end->format("F j Y"));
             $templateProcessor->saveAs(storage_path('app/public/' . $year->company->id . '/' . $year->id . '/' .  'Remaining_pages.docx'));
             return response()->download(storage_path('app/public/' . $year->company->id . '/' . $year->id . '/' .  'Remaining_pages.docx'));

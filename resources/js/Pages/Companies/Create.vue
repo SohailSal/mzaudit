@@ -93,6 +93,17 @@
             <div v-if="errors.email">{{ errors.email }}</div>
           </div>
           <div class="p-2 mr-2 mb-2 mt-4 ml-6 flex flex-wrap">
+            <label class="w-28 inline-block text-right mr-4">Company Number:</label>
+            <input
+              type="text"
+              v-model="form.company_no"
+              placeholder="12345678"
+              class="pr-2 pb-2 w-full lg:w-1/4 rounded-md leading-tight"
+              label="company_no"
+            />
+            <div v-if="errors.company_no">{{ errors.company_no }}</div>
+          </div>
+          <div class="p-2 mr-2 mb-2 mt-4 ml-6 flex flex-wrap">
             <label class="w-28 inline-block text-right mr-4">Web:</label>
             <input
               type="text"
@@ -192,6 +203,7 @@ export default {
     const form = useForm({
       name: null,
       address: null,
+      company_no: null,
       email: null,
       web: null,
       phone: null,

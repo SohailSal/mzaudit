@@ -84,6 +84,17 @@
             <div v-if="errors.email">{{ errors.email }}</div>
           </div>
           <div class="p-2 mr-2 mb-2 mt-4 ml-6 flex flex-wrap">
+            <label class="w-28 inline-block text-right mr-4">Company Number:</label>
+
+            <input
+              type="text"
+              v-model="form.company_no"
+              class="pr-2 pb-2 w-full lg:w-1/4 rounded-md leading-tight"
+              label="company_no"
+            />
+            <div v-if="errors.company_no">{{ errors.company_no }}</div>
+          </div>
+          <div class="p-2 mr-2 mb-2 mt-4 ml-6 flex flex-wrap">
             <label class="w-28 inline-block text-right mr-4">Web:</label>
             <input
               type="text"
@@ -183,6 +194,7 @@ export default {
         name: this.company.name,
         address: this.company.address,
         email: this.company.email,
+        company_no: this.company.company_no,
         web: this.company.web,
         phone: this.company.phone,
         fiscal: this.company.fiscal,

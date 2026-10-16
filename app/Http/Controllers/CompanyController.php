@@ -90,6 +90,7 @@ class CompanyController extends Controller
             $company = Company::create([
                 'name' => strtoupper(Request::input('name')),
                 'address' => Request::input('address'),
+                'company_no' => strtoupper(Request::input('company_no')),
                 'email' => Request::input('email'),
                 'web' => Request::input('web'),
                 'phone' => Request::input('phone'),
@@ -208,6 +209,7 @@ class CompanyController extends Controller
                 'id' => $company->id,
                 'name' => $company->name,
                 'address' => $company->address,
+                'company_no' => $company->company_no,
                 'email' => $company->email,
                 'web' => $company->web,
                 'phone' => $company->phone,
@@ -226,6 +228,7 @@ class CompanyController extends Controller
 
         $company->name = strtoupper(Request::input('name'));
         $company->address = Request::input('address');
+        $company->company_no = Request::input('company_no');
         $company->email = Request::input('email');
         $company->web = Request::input('web');
         $company->phone = Request::input('phone');
